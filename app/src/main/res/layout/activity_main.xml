@@ -95,7 +95,7 @@
         />
 
     <ImageView
-        android:id="@+id/CheckCircle1"
+        android:id="@+id/CheckCircle3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/MakePW"
@@ -113,7 +113,7 @@
 
         />
     <ImageView
-        android:id="@+id/CheckCircle"
+        android:id="@+id/CheckCircle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/NAME"
