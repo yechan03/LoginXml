@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         name = findViewById(R.id.NAME);
-        makeid = findViewById(R.id.MakeID);
-        makepw = findViewById(R.id.MakePW);
+        makeid = findViewById(R.id.sign_up_email);
+        makepw = findViewById(R.id.sign_up_pwd);
         checkpw = findViewById(R.id.CheckPW);
         checkcircle1 = findViewById(R.id.CheckCircle1);
         checkcircle2 = findViewById(R.id.CheckCircle2);
@@ -36,7 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                checkcircle1.clearColorFilter();
+                if (name.getText().toString().length() == 0) {
+                    checkcircle1.clearColorFilter();
+
+                } else {
+                    checkcircle1.setColorFilter(Color.rgb(14, 168, 40));
+                }
             }
 
             @Override
@@ -45,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 if (name.getText().toString().length() == 0) {
                     checkcircle1.clearColorFilter();
 
-                } else {
-                    checkcircle1.setColorFilter(Color.rgb(14, 168, 40));
                 }
             }
 
@@ -60,17 +63,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                checkcircle2.clearColorFilter();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
                 if (makeid.getText().toString().length()==0){
                     checkcircle2.clearColorFilter();
                 }
                 else {
 
                     checkcircle2.setColorFilter(Color.rgb(14, 168, 40));
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (makeid.getText().toString().length()==0){
+                    checkcircle2.clearColorFilter();
                 }
 
             }
@@ -84,7 +89,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                checkcircle3.clearColorFilter();
+                if (makepw.getText().toString().length()==0){
+                    checkcircle3.clearColorFilter();
+                }
+                else {
+
+                    checkcircle3.setColorFilter(Color.rgb(14, 168, 40));
+                }
 
             }
 
@@ -93,10 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (makepw.getText().toString().length()==0){
                     checkcircle3.clearColorFilter();
-                }
-                else {
-
-                    checkcircle3.setColorFilter(Color.rgb(14, 168, 40));
                 }
 
             }
